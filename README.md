@@ -1,5 +1,6 @@
 ## RLock
 A distributed lock base on Redis achieved by Golang.
+- [简体中文](https://github.com/Hansisunstoppable/redis_lock/blob/main/README_ZH.md)
 ### Usage
 ```
 go get github.com/Hansisunstoppable/redis_lock
