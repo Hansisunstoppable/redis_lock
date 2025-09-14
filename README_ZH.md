@@ -26,8 +26,7 @@ import (
 )
 
 func Test_blockingLock(t *testing.T) {
-	// 请输入 redis 节点的地址和密码
-	addr := "xxxx:xx"
+	addr := "127.0.0.1:6379"
 	passwd := ""
 
 	client := NewClient("tcp", addr, passwd)
@@ -72,8 +71,7 @@ import (
 )
 
 func Test_nonblockingLock(t *testing.T) {
-	// 请输入 redis 节点的地址和密码
-	addr := "xxxx:xx"
+	addr := "127.0.0.1:6379"
 	passwd := ""
 
 	client := NewClient("tcp", addr, passwd)
@@ -135,14 +133,13 @@ import (
 )
 
 func Test_redLock(t *testing.T) {
-	// 请输入三个 redis 节点的地址和密码
-	addr1 := "xxxx:xx"
+	addr1 := "127.0.0.1:7001"
 	passwd1 := ""
 
-	addr2 := "yyyy:yy"
+	addr2 := "127.0.0.1:7002"
 	passwd2 := ""
 
-	addr3 := "zzzz:zz"
+	addr3 := "127.0.0.1:7003"
 	passwd3 := ""
 
 	// 直连三个 redis 节点的三把锁
