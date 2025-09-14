@@ -10,7 +10,7 @@ go get github.com/Hansisunstoppable/redis_lock
 - Supports RedLock to address Redis's weak data consistency issues
 ### Quick Start
 #### Non-blocking mode lock acquisition
-```
+```go
 package redis_lock
 
 import (
@@ -56,7 +56,7 @@ func Test_blockingLock(t *testing.T) {
 }
 ```
 #### Blocking mode lock acquisition
-```
+```go
 package redis_lock
 
 import (
@@ -101,7 +101,7 @@ func Test_nonblockingLock(t *testing.T) {
 }
 ```
 #### Activate WatchDog
-```
+```go
 func repairLock(o *LockOptions) {
 	if o.isBlock && o.blockWaitingSeconds <= 0 {
 		// 默认阻塞等待时间上限为 5 秒
@@ -119,7 +119,7 @@ func repairLock(o *LockOptions) {
 }
 ```
 #### RedLock
-```
+```go
 package redis_lock
 
 import (
