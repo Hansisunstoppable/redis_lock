@@ -5,9 +5,13 @@ A distributed lock base on Redis achieved by Golang.
 go get github.com/Hansisunstoppable/redis_lock
 ```
 ### Achieve
-- Supports lock acquisition via blocking polling and non-blocking modes
-- Supports automatic extension of lock expiration time using watchdog mode
-- Supports RedLock to address Redis's weak data consistency issues
+- Mutual exclusion: Redis distributed lock can ensure that only one client can acquire the lock at the same time, realizing mutual exclusion between threads.
+- Security: Redis distributed locks use atomic operations, which can ensure the security of locks under concurrent conditions and avoid problems such as data competition and deadlocks.
+- Lock timeout: In order to avoid deadlock caused by a failure of a certain client after acquiring the lock, the Redis distributed lock can set the lock timeout period, and the lock will be released automatically when the timeout is exceeded.
+- Reentrancy: Redis distributed locks can support the same client to acquire the same lock multiple times, avoiding deadlocks in nested calls.
+- High performance: Redis is an in-memory database with high read and write performance, enabling fast locking and unlocking operations.
+- Atomicity: The locking and unlocking operations of Redis distributed locks use atomic commands, which can ensure the atomicity of operations and avoid competition problems under concurrency.
+- RedLock: In the implementation of RedLock, the contradiction between Consistency C and Availability A in CAP will be eased based on the majority principle, ensuring that when more than half of all Redis nodes under RedLock are available, the entire RedLock can be provided normally Serve.
 ### Quick Start
 #### Non-blocking mode lock acquisition
 ```go
