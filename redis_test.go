@@ -7,7 +7,6 @@ import (
 	"testing"
 	"time"
 )
-
 // go test -count=1 -run ^Test_NewClient$ redis_lock
 func Test_NewClient(t *testing.T) {
 	addr := "172.17.224.1:6379"
